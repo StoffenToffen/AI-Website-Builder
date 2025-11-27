@@ -1,5 +1,6 @@
 import { Sandbox } from "@e2b/code-interpreter";
 import { openai, createAgent } from "@inngest/agent-kit";
+
 import { inngest } from "./client";
 import { getSandbox } from "./utils";
 
@@ -7,7 +8,7 @@ export const helloWorld = inngest.createFunction(
   { id: "hello-world" },
   { event: "test/hello.world" },
   async ({ event, step }) => {
-    const sandboxId = await step.run("get-sandbox-i", async () => {
+    const sandboxId = await step.run("get-sandbox-id", async () => {
       const sandbox = await Sandbox.create("ai-website-builder-nextjs-test");
       return sandbox.sandboxId;
     });
