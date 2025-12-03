@@ -21,7 +21,7 @@ import { TreeView } from "./tree-view";
 
 type FileCollection = { [path: string]: string };
 
-function getLanguagFromExtention(filename: string): string {
+function getLanguageFromExtention(filename: string): string {
   const extension = filename.split(".").pop()?.toLowerCase();
   return extension || "text";
 }
@@ -150,13 +150,13 @@ export const FileExplorer = ({ files }: FileExplorerProps) => {
             <div className="flex-1 overflow-auto">
               <CodeView
                 code={files[selectedFile]}
-                lang={getLanguagFromExtention(selectedFile)}
+                lang={getLanguageFromExtention(selectedFile)}
               />
             </div>
           </div>
         ) : (
           <div className="flex h-full items-center justify-center text-muted-foreground">
-            Select a file to view it&apos;s content
+            Select a file to view its content
           </div>
         )}
       </ResizablePanel>
