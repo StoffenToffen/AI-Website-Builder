@@ -40,7 +40,7 @@ export const codeAgentFunction = inngest.createFunction(
             projectId: event.data.projectId,
           },
           orderBy: {
-            createdAt: "desc",
+            createdAt: "asc",
           },
         });
 
